@@ -45,8 +45,8 @@ function onLoadMore(e) {
   searchImage.fetchImages().then(hits => createMarkup(hits));
 }
 
-function createMarkup(hits) {
-  markup = hits
+function createMarkup(array) {
+  markup = array
     .map(
       ({
         webformatURL,
