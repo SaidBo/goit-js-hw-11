@@ -7,8 +7,28 @@
     <link rel="stylesheet" href="./sass/index.scss" />
     <script type="module" src="./index.js"></script>
   </head>
+  <header>
+    <div class="form-container">
+      <form class="search-form" id="search-form">
+        <input
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Search images..."
+        />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </header>
   <body>
+    <div class="gallery">
+      <!-- Картки зображень -->
+    </div>
+    <div class="btn-container">
+      <button type="button" class="load-more" hidden="true">Load more</button>
+    </div>
+
     <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+    <!-- <include src="./partials/example.html"></include> -->
   </body>
 </html>
