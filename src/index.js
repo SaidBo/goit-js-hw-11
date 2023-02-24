@@ -59,8 +59,8 @@ function createMarkup(array) {
         downloads,
       }) =>
         `<a class="gallery-item" href="${largeImageURL}">
+        
         <div class="gallery-card">
-    
         <img src="${webformatURL}" alt="${tags}" loading="lazy" />
           <div class="info">
             <p class="info-item">
