@@ -11,7 +11,7 @@ const refs = {
 
 const searchImage = new SearchImage();
 
-let markup
+let markup;
 function gallerylightbox() {
   new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
@@ -38,12 +38,14 @@ function onSearch(e) {
     clearHitsContainer(),
       createMarkup(hits),
       gallerylightbox(),
-      refs.loadMoreBtn.hidden = false;
+      (refs.loadMoreBtn.hidden = false);
   });
+  lightbox.refresh();
 }
 
 function onLoadMore(e) {
   searchImage.fetchImages().then(hits => createMarkup(hits));
+  lightbox.refresh();
 }
 
 function createMarkup(array) {
@@ -59,7 +61,7 @@ function createMarkup(array) {
         downloads,
       }) =>
         `<a class="gallery-item" href="${largeImageURL}">
-        
+
         <div class="gallery-card">
         <img src="${webformatURL}" alt="${tags}" loading="lazy" />
           <div class="info">
