@@ -11,6 +11,7 @@ const refs = {
 
 const searchImage = new SearchImage();
 
+let markup
 function gallerylightbox() {
   new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
