@@ -39,12 +39,21 @@ function onSearch(e) {
       createMarkup(hits),
       gallerylightbox(),
       (refs.loadMoreBtn.hidden = false);
+
+      if (hits.length < 40) {
+        refs.loadMoreBtn.hidden = true;
+      }
   });
   lightbox.refresh();
 }
 
 function onLoadMore(e) {
-  searchImage.fetchImages().then(hits => createMarkup(hits));
+  searchImage.fetchImages().then(hits => {
+    createMarkup(hits);
+    if (hits.length < 40) {
+      refs.loadMoreBtn.hidden = true;
+    }
+  });
   lightbox.refresh();
 }
 
