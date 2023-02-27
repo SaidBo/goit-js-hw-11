@@ -41,9 +41,9 @@ function onSearch(e) {
       gallerylightbox(),
       (refs.loadMoreBtn.hidden = false);
 
-      if (hits.length < 40) {
-        refs.loadMoreBtn.hidden = true;
-      }
+    if (hits.length < 40) {
+      refs.loadMoreBtn.hidden = true;
+    }
   });
   SimpleLightbox.refresh();
 }
@@ -51,6 +51,7 @@ function onSearch(e) {
 function onLoadMore(e) {
   searchImage.fetchImages().then(hits => {
     createMarkup(hits);
+    gallerylightbox();
     if (hits.length < 40) {
       refs.loadMoreBtn.hidden = true;
     }
