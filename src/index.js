@@ -12,6 +12,7 @@ const refs = {
 const searchImage = new SearchImage();
 
 let markup;
+
 function gallerylightbox() {
   new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
@@ -44,7 +45,7 @@ function onSearch(e) {
         refs.loadMoreBtn.hidden = true;
       }
   });
-  lightbox.refresh();
+  SimpleLightbox.refresh();
 }
 
 function onLoadMore(e) {
@@ -54,7 +55,7 @@ function onLoadMore(e) {
       refs.loadMoreBtn.hidden = true;
     }
   });
-  lightbox.refresh();
+  SimpleLightbox.refresh();
 }
 
 function createMarkup(array) {
